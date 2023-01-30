@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {Card,Button, Alert} from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Dashboard() {
   const {user,logout}  = useAuth()
@@ -28,6 +28,7 @@ export default function Dashboard() {
         <h2 className='text-center mt-10 mb-4'>Profile</h2>
         <strong>Email: {user.email}</strong>
         <Button disabled={loading} className='w-100 mt-2' variant='link' onClick={handleClick}>Log Out</Button>
+        <div className='w-100 mt-2 text-center'><Link to='/update-profile'>Update Profile</Link></div>
       </Card.Body>
 
     </Card>

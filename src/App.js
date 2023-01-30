@@ -7,6 +7,7 @@ import { AuthState } from './contexts/AuthContext'
 import {BrowserRouter as Router , Routes , Route } from 'react-router-dom'
 import PrivateRouter from './components/PrivateRoute'
 import PasswordReset from './components/PasswordReset'
+import UpdateProfile from './components/UpdateProfile'
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
             {/* The following method for private route works */}
             <Route path='/' element={<PrivateRouter>
               <Dashboard/>
+            </PrivateRouter>}/>
+            <Route path='/update-profile' element={<PrivateRouter>
+              <UpdateProfile/>
             </PrivateRouter>}/>
             <Route path='/signup' element={<Signup/>}/>
             <Route path='/login' element={<Login/>}/>
